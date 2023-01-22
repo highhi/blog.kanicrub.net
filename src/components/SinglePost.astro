@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string
+  content: string
+}
+const props = Astro.props
+---
+<main>
+  <article>
+    <header>
+      <h1>{props.title}</h1>
+    </header>
+    <div class="post-content">
+      <Fragment set:html={props.content} />
+      <p>foo</p>
+    </div>
+  </article>
+</main>
+
+<script>
+  console.log('Welcome, browser console!');
+</script>
+
+<style>
+.post-content :global(img) {
+  width: 100%;
+}
+</style>
