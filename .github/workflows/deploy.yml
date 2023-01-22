@@ -30,6 +30,9 @@ jobs:
         run: npm ci
 
       - name: build
+        env:
+          CMS_API_KEY: ${{ secrets.CF_API_TOKEN }}
+          CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
         run: npm run build
 
       - name: deploy
