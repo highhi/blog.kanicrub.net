@@ -33,7 +33,9 @@ jobs:
         env:
           CMS_API_KEY: ${{ secrets.CMS_API_KEY }}
           CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
-        run: npm run build
+        run: |
+          npm run build
+          mv _headers ./dist/_headers
 
       - name: deploy
         uses: cloudflare/pages-action@1
