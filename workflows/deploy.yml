@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+  steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: output node version
+      id: output-node-version
+      run: echo "node-version=$(cat ./.node-version)" >> $GITHUB_OUTPUT
+
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ steps.output-node-version.outputs.node-version }}
+        cache: 'npm'
+
+    - name: dependencies install
+      run: npm ci
+
+    - name: build
+      run: npm run build
+
+    - name: deploy
+      uses: cloudflare/pages-action@1
+      with:
+        accountId: ${{ secrets.CF_ACCOUNT_ID }}
+        apiToken: ${{ secrets.CF_API_TOKEN }}
+        projectName: blog-kanicrub-net
+        directory: ./dist
+        gitHubToken: ${{ secrets.GITHUB_TOKEN }}
