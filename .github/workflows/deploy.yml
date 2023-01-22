@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
+    permissions:
+      contents: read
+      deployments: write
+
     steps:
       - name: checkout
         uses: actions/checkout@v3
