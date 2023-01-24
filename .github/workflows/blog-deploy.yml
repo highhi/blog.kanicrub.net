@@ -1,4 +1,4 @@
-name: Deploy
+name: Blog Deploy
 
 on:
   workflow_dispatch:
@@ -34,8 +34,7 @@ jobs:
           CMS_API_KEY: ${{ secrets.CMS_API_KEY }}
           CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
         run: |
-          npm run build
-          cp src/_headers dist/_headers
+          npm run build -w packages/blog
 
       - name: deploy
         uses: cloudflare/pages-action@1
@@ -43,5 +42,5 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
           projectName: blog-kanicrub-net
-          directory: ./dist
+          directory: ./packages/dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
