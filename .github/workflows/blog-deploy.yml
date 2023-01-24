@@ -42,5 +42,5 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
           projectName: blog-kanicrub-net
-          directory: ./packages/dist
+          directory: ./packages/blog/dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
