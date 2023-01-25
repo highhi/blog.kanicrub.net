@@ -1,0 +1,6 @@
+name = "blog-kanicrub-worker"
+main = "src/index.ts"
+compatibility_date = "2023-01-24"
+routes = [
+  { pattern = "worker-blog.kanicrub.net", custom_domain = true },
+]
