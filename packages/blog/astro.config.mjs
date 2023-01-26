@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from "@astrojs/cloudflare";
+import prefetch from '@astrojs/prefetch';
 
 export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
   site: 'https://blog.kanicrub.net',
+  integrations: [prefetch()],
   vite: {
     define: {
       // see: https://github.com/withastro/astro/issues/4416#issuecomment-1228234136

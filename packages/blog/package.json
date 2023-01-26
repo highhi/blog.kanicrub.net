@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "5.0.0",
+    "@astrojs/prefetch": "0.1.1",
     "astro": "1.9.2",
     "microcms-js-sdk": "2.3.2"
   }
