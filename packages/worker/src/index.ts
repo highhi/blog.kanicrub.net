@@ -26,7 +26,7 @@ app.post('/webhooks/purge', async (c) => {
       'Content-Type': 'application/json'
     }),
     body: JSON.stringify({
-      files: [`https://blog.kanicrub.net/posts${payload.id}`]
+      files: [`https://blog.kanicrub.net/posts/${payload.id}`]
     })
   })
 
