@@ -13,7 +13,7 @@ const posts = await getBlogPosts()
       {
         posts.contents.map((post) => (
           <li>
-            <a href={`posts/${post.id}`}>{post.title}</a>
+            <a rel="prefetch" href={`posts/${post.id}`}>{post.title}</a>
           </li>
         ))
       }
