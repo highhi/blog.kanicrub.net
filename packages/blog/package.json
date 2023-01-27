@@ -11,9 +11,9 @@
     "fmt": "prettier -w src/**/*.{ts,astro}"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "5.0.0",
+    "@astrojs/cloudflare": "6.1.0",
     "@astrojs/prefetch": "0.1.1",
-    "astro": "1.9.2",
+    "astro": "2.0.2",
     "microcms-js-sdk": "2.3.2"
   },
   "devDependencies": {
