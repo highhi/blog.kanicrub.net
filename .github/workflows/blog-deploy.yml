@@ -31,7 +31,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.R2_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.R2_SECRET_KEY }}
-          aws-region: ''
+          aws-region: ap-northeast-1
 
       - name: dependencies install
         run: npm ci
