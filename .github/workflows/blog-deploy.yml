@@ -26,6 +26,12 @@ jobs:
           node-version: ${{ steps.output-node-version.outputs.node-version }}
           cache: 'npm'
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.R2_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.R2_SECRET_KEY }}
+
       - name: dependencies install
         run: npm ci
 
@@ -35,6 +41,12 @@ jobs:
           CMS_SERVICE_DOMAIN: ${{ secrets.CMS_SERVICE_DOMAIN }}
         run: |
           npm run build -w packages/blog
+
+      - name: deploy assets
+        run: |
+          aws s3 sync packages/blog/dist/assets s3://assets-blog-kanicrub/assets \
+            --cache-control "max-age=31536000,immutable" \
+            --endpoint-url https://dc938bd26c1f0ebc388b6cea34c1fb3f.r2.cloudflarestorage.com
 
       - name: deploy
         uses: cloudflare/pages-action@1
