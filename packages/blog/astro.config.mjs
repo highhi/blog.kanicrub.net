@@ -7,6 +7,9 @@ export default defineConfig({
   adapter: cloudflare(),
   site: 'https://blog.kanicrub.net',
   integrations: [prefetch()],
+  build: {
+    assets: 'https://assets-blog.kanicrub.net/assets'
+  },
   vite: {
     define: {
       // see: https://github.com/withastro/astro/issues/4416#issuecomment-1228234136
