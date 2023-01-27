@@ -1,10 +1,10 @@
-import { createClient} from 'microcms-js-sdk'
+import { createClient } from 'microcms-js-sdk'
 
 export const getCmsClient = () => {
   return createClient({
     serviceDomain: import.meta.env.CMS_SERVICE_DOMAIN,
-    apiKey: import.meta.env.CMS_API_KEY
-  });
+    apiKey: import.meta.env.CMS_API_KEY,
+  })
 }
 
 export type BlogPosts = {
@@ -15,7 +15,7 @@ export type BlogPosts = {
       id: string
       name: string
     }
-  }[],
+  }[]
 }
 
 export const getBlogPosts = (): Promise<BlogPosts> => {

@@ -4,17 +4,20 @@ import { getBlogPosts } from '../utils/cms/client'
 
 const posts = await getBlogPosts()
 ---
+
 <Layout title="blog.kanicrub.net">
   <main>
     <h1>Kani Crub 🦀</h1>
     <p>hi.</p>
     <ul>
-      {posts.contents.map(post => (
-        <li>
-          <a href={`posts/${post.id}`}>{post.title}</a>
-        </li>
-      ))}
-		</ul>
+      {
+        posts.contents.map((post) => (
+          <li>
+            <a href={`posts/${post.id}`}>{post.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Layout>
 

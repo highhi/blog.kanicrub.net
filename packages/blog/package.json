@@ -7,12 +7,17 @@
     "start": "astro start",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fmt": "prettier -w src/**/*.{ts,astro}"
   },
   "dependencies": {
     "@astrojs/cloudflare": "5.0.0",
     "@astrojs/prefetch": "0.1.1",
     "astro": "1.9.2",
     "microcms-js-sdk": "2.3.2"
+  },
+  "devDependencies": {
+    "prettier": "2.8.3",
+    "prettier-plugin-astro": "0.8.0"
   }
 }
