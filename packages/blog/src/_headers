@@ -1,2 +1,5 @@
+/_posts/*
+  Cache-Control: max-age=0, max-age=14400
+
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable

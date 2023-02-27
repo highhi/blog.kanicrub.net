@@ -13,7 +13,6 @@ if (id == null) {
 }
 
 const post = await getBlogPostById(id)
-Astro.response.headers.append('Cache-Control', 'max-age=0, s-maxage=14400')
 ---
 
 <Layout>
