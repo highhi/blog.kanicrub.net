@@ -1,4 +1,4 @@
-/_posts/*
+/posts/*
   Cache-Control: max-age=0, max-age=14400
 
 /_astro/*
