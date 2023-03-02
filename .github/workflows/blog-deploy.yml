@@ -51,9 +51,9 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_KEY }}
           AWS_DEFAULT_REGION: auto
 
-      # - name: copy _header file
-      #   run: |
-      #     cp ./packages/blog/src/_headers ./packages/blog/dist/_headers
+      - name: copy _header file
+        run: |
+          cp ./packages/blog/src/_headers ./packages/blog/dist/_headers
 
       - name: deploy
         uses: cloudflare/pages-action@1
